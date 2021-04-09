@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style.css">  
+    <title>Speech-Gender-Emotion Prediction</title>
+  </head>
+
+  <body>
+<div class="container main">
+  <div class="jumbotron" id="holder">
+    <center><h1 class='main_heading'> <font face="Comic Sans MS" color="purple" size="10"> Speech-Gender-and-Emotion Prediction </font></h1></center>
+    <br>
+    <br>
+    <p>This Web Based Application predicts your gender and your emotion type according to the six main approved main emotions by the World Health Organisation (WHO) department of menatl health. [Note that this model is 80% accurate hence it is not going to be always accurate but 8 in 10 times correct]</p>
+    <br>
+    <div class = "Instructions">
+      <h2>Instructions: </h2>
+      <p>1. Please upload the .wav audio file in the field below</p>
+      <p>2. The audio must be in .wav format</p>
+      <p>3. click predict </p>
+    </div>
+    <br> 
+
+    <div class = "Upload Audio">
+    <h2>Upload Audio: </h2>
+    </div>
+    <br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <input type="file" id="upload" />
+    <audio id="audio" controls>
+      <source src="" id="src" />
+    </audio>
+
+    <script>
+      function handleFiles(event) {
+        var files = event.target.files;
+        $("#src").attr("src", URL.createObjectURL(files[0]));
+        document.getElementById("audio").load();
+      }
+
+      document
+        .getElementById("upload")
+        .addEventListener("change", handleFiles, false);
+    </script>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+         <center><button type="submit" class="button btn btn-default">PREDICT</button><center/>
+        </div>
+      </div>
+    </form>
+
+    
+
+    <h2 class="result"></h2>
+  </div>
+  </div>
+
+  </body>
+</html>
