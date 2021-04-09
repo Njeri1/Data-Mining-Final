@@ -1,3 +1,3 @@
 # Link to the Heroku Application
 
-https://emotiondetection.herokuapp.com/ 
+https://flightdetection.herokuapp.com/ 
